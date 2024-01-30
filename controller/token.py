@@ -1,9 +1,9 @@
-import os
 from datetime import datetime, timedelta
 from jose import jwt
+from . import settings
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-ALGORITHM = os.environ.get("ALGORITHM")
+SECRET_KEY = settings.secret_key
+ALGORITHM = settings.algorithm
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
