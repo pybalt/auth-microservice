@@ -16,6 +16,12 @@ ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
 @router.post("/")
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()) -> Token:
+    """
+    TODO: Protect this endpoint against brute force attacks
+    
+    https://fastapi.tiangolo.com/advanced/security/http-basic-auth/
+    """
+    
     user = authenticate_user(fake_users_db, form_data.username, form_data.password)
     if not user: 
         raise InvalidCredentials
