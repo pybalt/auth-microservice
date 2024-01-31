@@ -33,3 +33,5 @@ docker-compose up
 2. Conexión con la base de datos.
 
 3. Que se genere un log de las conexiones usando Background Tasks.
+
+4. Refrescar el token.
